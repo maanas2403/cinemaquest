@@ -292,6 +292,9 @@ footer {
         display: block; /* Use flexbox */
         
     }
+    .movie-details {
+        margin-left: 0px; /* Add margin between poster and details */
+    }
     .movie-details-container img {
         max-width: 100%;
         max-height: 250px; 
