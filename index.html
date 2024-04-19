@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Quest</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="LOGO2.png">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="LOGO.png" alt="Logo">
+          </div>
+        <h1 id="movieCenterTitle"><a href="#" class="home-link" onclick="goToMovieCenter()">Cinema Quest</a></h1>
+        <div id="searchIcon" onclick="toggleSearch()">
+            <!-- Search icon or button -->
+            <img src="search-icon.png" alt="Search" >
+        </div>
+        <div class="search-bar" id="searchBar" style="display: none;">
+            <input type="text" id="searchInput" placeholder="Search..." >
+            <button onclick="searchMovies()">Search</button>
+        </div>
+    </div>
+    </header>
+    <main>
+        <section class="top-movies">
+            <h2>Popular Movies of 2024</h2>
+            <div class="movie-list" id="2024"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 2023</h2>
+            <div class="movie-list" id="2023"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 2022</h2>
+            <div class="movie-list" id="2022"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 2021</h2>
+            <div class="movie-list" id="2021"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 2020</h2>
+            <div class="movie-list" id="2020"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 2019</h2>
+            <div class="movie-list" id="2019"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 2018</h2>
+            <div class="movie-list" id="2018"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 2017</h2>
+            <div class="movie-list" id="2017"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 2016</h2>
+            <div class="movie-list" id="2016"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 2015</h2>
+            <div class="movie-list" id="2015"></div>
+        </section>
+        \<section class="top-movies">
+            <h2>Popular Movies of 2014</h2>
+            <div class="movie-list" id="2014"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 2013</h2>
+            <div class="movie-list" id="2013"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 2012</h2>
+            <div class="movie-list" id="2012"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 2011</h2>
+            <div class="movie-list" id="2011"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 2010</h2>
+            <div class="movie-list" id="2010"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 2009</h2>
+            <div class="movie-list" id="2009"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 2008</h2>
+            <div class="movie-list" id="2008"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 2007</h2>
+            <div class="movie-list" id="2007"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 2006</h2>
+            <div class="movie-list" id="2006"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 2005</h2>
+            <div class="movie-list" id="2005"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 2004</h2>
+            <div class="movie-list" id="2004"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 2003</h2>
+            <div class="movie-list" id="2003"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 2002</h2>
+            <div class="movie-list" id="2002"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 2001</h2>
+            <div class="movie-list" id="2001"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 2000</h2>
+            <div class="movie-list" id="2000"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1999</h2>
+            <div class="movie-list" id="1999"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1998</h2>
+            <div class="movie-list" id="1998"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1997</h2>
+            <div class="movie-list" id="1997"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1996</h2>
+            <div class="movie-list" id="1996"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1995</h2>
+            <div class="movie-list" id="1995"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1994</h2>
+            <div class="movie-list" id="1994"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1993</h2>
+            <div class="movie-list" id="1993"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1992</h2>
+            <div class="movie-list" id="1992"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1991</h2>
+            <div class="movie-list" id="1991"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1990</h2>
+            <div class="movie-list" id="1990"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1989</h2>
+            <div class="movie-list" id="1989"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1988</h2>
+            <div class="movie-list" id="1988"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1987</h2>
+            <div class="movie-list" id="1987"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1986</h2>
+            <div class="movie-list" id="1986"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1985</h2>
+            <div class="movie-list" id="1985"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1984</h2>
+            <div class="movie-list" id="1984"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1983</h2>
+            <div class="movie-list" id="1983"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1982</h2>
+            <div class="movie-list" id="1982"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1981</h2>
+            <div class="movie-list" id="1981"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1980</h2>
+            <div class="movie-list" id="1980"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1979</h2>
+            <div class="movie-list" id="1979"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1978</h2>
+            <div class="movie-list" id="1978"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1977</h2>
+            <div class="movie-list" id="1977"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1976</h2>
+            <div class="movie-list" id="1976"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1975</h2>
+            <div class="movie-list" id="1975"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1974</h2>
+            <div class="movie-list" id="1974"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1973</h2>
+            <div class="movie-list" id="1973"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1972</h2>
+            <div class="movie-list" id="1972"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1971</h2>
+            <div class="movie-list" id="1971"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1970</h2>
+            <div class="movie-list" id="1970"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1969</h2>
+            <div class="movie-list" id="1969"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1968</h2>
+            <div class="movie-list" id="1968"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1967</h2>
+            <div class="movie-list" id="1967"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1966</h2>
+            <div class="movie-list" id="1966"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1965</h2>
+            <div class="movie-list" id="1965"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1964</h2>
+            <div class="movie-list" id="1964"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1963</h2>
+            <div class="movie-list" id="1963"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1962</h2>
+            <div class="movie-list" id="1962"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1961</h2>
+            <div class="movie-list" id="1961"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1960</h2>
+            <div class="movie-list" id="1960"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1959</h2>
+            <div class="movie-list" id="1959"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1958</h2>
+            <div class="movie-list" id="1958"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1957</h2>
+            <div class="movie-list" id="1957"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1956</h2>
+            <div class="movie-list" id="1956"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1955</h2>
+            <div class="movie-list" id="1955"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1954</h2>
+            <div class="movie-list" id="1954"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1953</h2>
+            <div class="movie-list" id="1953"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1952</h2>
+            <div class="movie-list" id="1952"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1951</h2>
+            <div class="movie-list" id="1951"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1950</h2>
+            <div class="movie-list" id="1950"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1949</h2>
+            <div class="movie-list" id="1949"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1948</h2>
+            <div class="movie-list" id="1948"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1947</h2>
+            <div class="movie-list" id="1947"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1946</h2>
+            <div class="movie-list" id="1946"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1945</h2>
+            <div class="movie-list" id="1945"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1944</h2>
+            <div class="movie-list" id="1944"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1943</h2>
+            <div class="movie-list" id="1943"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1942</h2>
+            <div class="movie-list" id="1942"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1941</h2>
+            <div class="movie-list" id="1941"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1940</h2>
+            <div class="movie-list" id="1940"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1939</h2>
+            <div class="movie-list" id="1939"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1938</h2>
+            <div class="movie-list" id="1938"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1937</h2>
+            <div class="movie-list" id="1937"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1936</h2>
+            <div class="movie-list" id="1936"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1935</h2>
+            <div class="movie-list" id="1935"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1934</h2>
+            <div class="movie-list" id="1934"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1933</h2>
+            <div class="movie-list" id="1933"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1932</h2>
+            <div class="movie-list" id="1932"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1931</h2>
+            <div class="movie-list" id="1931"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1930</h2>
+            <div class="movie-list" id="1930"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1929</h2>
+            <div class="movie-list" id="1929"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1928</h2>
+            <div class="movie-list" id="1928"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1927</h2>
+            <div class="movie-list" id="1927"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1926</h2>
+            <div class="movie-list" id="1926"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1925</h2>
+            <div class="movie-list" id="1925"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1924</h2>
+            <div class="movie-list" id="1924"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1923</h2>
+            <div class="movie-list" id="1923"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1922</h2>
+            <div class="movie-list" id="1922"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1921</h2>
+            <div class="movie-list" id="1921"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1920</h2>
+            <div class="movie-list" id="1920"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1919</h2>
+            <div class="movie-list" id="1919"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1918</h2>
+            <div class="movie-list" id="1918"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1917</h2>
+            <div class="movie-list" id="1917"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1916</h2>
+            <div class="movie-list" id="1916"></div>
+        </section>
+        <section class="top-movies">
+            <h2>Popular Movies of 1915</h2>
+            <div class="movie-list" id="1915"></div>
+        </section>
+        <!-- Add more sections for other categories -->
+    </main>
+    
+    <div id="searchResults" class="search-results"><div class="search-results-inner" id="searchResultsInner">
+        <!-- Search results will be appended here -->
+    </div></div> <!-- Search results container -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+      <footer>
+        <p>&copy; 2024 Cinema Quest. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
