@@ -1,0 +1,284 @@
+main{
+    margin-bottom: 75px;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+
+/* Header content wrapper */
+.header-content {
+    padding: 25px;
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto;
+}
+.logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    margin-right: auto;
+}
+.logo img{
+    height: 100px;
+    
+}
+/* Movie center styles */
+
+#movieCenterTitle {
+    margin: 0;
+    color: #333;
+    text-decoration: none;
+    cursor: default;
+    position: absolute; /* Set movie center to absolute positioning */
+    top: 20px; /* Adjust top positioning */
+    left: 0;
+    right: 0;
+}
+
+#movieCenterTitle a {
+    color: white; /* Inherit the color from its parent element */
+    text-decoration: none; /* Remove underline */
+    cursor: pointer; /* Show pointer cursor on hover */
+}
+#searchIcon{
+    position: absolute; /* Set search bar to absolute positioning */
+    top: 20px; /* Adjust top positioning */
+    right: 20px;
+    
+}
+#searchIcon img{
+
+    height: 50px;
+
+}
+/* Search bar styles */
+.search-bar {
+   position: absolute; /* Set search bar to absolute positioning */
+   top: 20px; /* Adjust top positioning */
+   right: 20px;
+     /* Align items to the right */
+    gap: 5px; /* Add gap between input and button */
+    margin-bottom: 5px;
+    margin-left: auto;
+}
+
+.search-bar input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+
+.search-bar button:hover {
+    background-color: red;
+}
+
+
+
+.top-movies {
+    margin-top: 15px;
+}
+
+.top-movies h2 {
+    margin-top: 0;
+    margin-left: 5px;
+    color: white;
+}
+
+.movie-list {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Hide vertical scrolling */
+    white-space: nowrap; /* Prevent movies from wrapping to the next line */
+    padding-bottom: 25px; /* Add padding at the bottom to create space */
+}
+.movie-list::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+.movie-list::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the scrollbar track */
+    border-radius: 20px;
+}
+
+.movie-list::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scrollbar thumb */
+    border-radius: 20px; /* Rounded corners of the scrollbar thumb */
+}
+
+.movie-list::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color of the scrollbar thumb on hover */
+}
+.movie {
+    flex: 0 0 auto; /* Ensure each movie item is of fixed size */
+    width: 150px;
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    margin-right: 20px; /* Add margin between movie items */
+    transition: transform 0.3s ease;
+    margin-bottom: 13px; /* Add margin below each movie item */
+}
+
+.movie img {
+    max-width: 100%;
+}
+
+.movie p {
+    margin-top: 5px;
+}
+.movie {
+    width: 150px;
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.movie p {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+.movie:hover {
+    transform: translateX(5px); /* or any other hover effect you prefer */
+}
+/* Adjust the search results container */
+.search-results {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Adjust the inner container for search results */
+.search-results-inner {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Create grid with auto-sized columns */
+    gap: 20px; /* Add gap between items */
+}
+
+/* Adjust individual movie items for search results */
+.search-results-inner .movie {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    max-width: 200px; /* Limit maximum width of movie item */
+}
+
+/* Style for the search results heading */
+.search-results-heading {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+}
+
+.modal-content {
+    background-color: #333;
+    color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 75%;
+    border-radius: 8px;
+    position: relative;
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center align content horizontally */
+}
+
+.movie-details-container {
+    display: flex; /* Use flexbox */
+    
+}
+
+.movie-details {
+    margin-left: 20px; /* Add margin between poster and details */
+}
+
+/* Style for the poster */
+.movie-details-container img {
+    max-width: 100%;
+    max-height: 300px; 
+}
+
+/* Style for the details */
+.movie-details h2 {
+    margin-top: 0; /* Remove default margin */
+    font-size: 30px; /* Adjust font size */
+}
+
+.movie-details p {
+    margin: 5px 0; /* Adjust margin */
+    font-size: 20px; /* Adjust font size */
+}
+/* Close button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #aaa;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
