@@ -128,7 +128,7 @@ function handleMouseHover() {
 }
 // Display top movies in a category
 async function displayTopMoviesFrom2000To2018() {
-    for (let year = 1915; year <= 2024; year++) {
+    for (let year = 2024; year >= 1915; year--) {
         await displayTopMovies(year.toString(), year.toString());
     }
 }
