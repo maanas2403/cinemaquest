@@ -57,7 +57,7 @@ async function fetchTopMovies2024(year) {
         let allMovies = [];
 
         // Fetch multiple pages
-        for (let page = 1; page <= 5; page++) {
+        for (let page = 1; page <= 6; page++) {
             const response = await fetch(
                 `${apiUrl}/discover/movie?api_key=${apiKey}&primary_release_year=${year}&sort_by=vote_count.desc&page=${page}`
             );
@@ -80,7 +80,7 @@ async function fetchTopMovies2024(year) {
                 voteProduct: movie.vote_average * movie.vote_count
             }))
             .sort((a, b) => b.voteProduct - a.voteProduct)
-            .slice(0, 50);
+            .slice(0, 100);
 
         return sortedMovies;
 
