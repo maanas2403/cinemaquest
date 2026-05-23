@@ -34,21 +34,58 @@ function toggleSearch() {
         searchBar.style.display = 'none';
     }
 }
+// async function fetchTopMovies2024(year) {
+//     try {
+//         const response = await fetch(`${apiUrl}/discover/movie?api_key=${apiKey}&primary_release_year=${year}&sort_by=vote_count.desc`);
+//         const data = await response.json();
+//         // Calculate the product of vote_average and vote_count for each movie
+//         const sortedMovies = data.results
+//             .map(movie => ({
+//                 ...movie,
+//                 voteProduct: movie.vote_average * movie.vote_count
+//             }))
+//             .sort((a, b) => b.voteProduct - a.voteProduct)
+//             .slice(0, 50); // Get top 10 movies
+//         return sortedMovies;
+//     } catch (error) {
+//         console.error('Error fetching top movies of 2024:', error);
+//         return [];
+//     }
+// }
 async function fetchTopMovies2024(year) {
     try {
-        const response = await fetch(`${apiUrl}/discover/movie?api_key=${apiKey}&primary_release_year=${year}&sort_by=vote_count.desc`);
-        const data = await response.json();
-        // Calculate the product of vote_average and vote_count for each movie
-        const sortedMovies = data.results
+        let allMovies = [];
+
+        // Fetch multiple pages
+        for (let page = 1; page <= 5; page++) {
+            const response = await fetch(
+                `${apiUrl}/discover/movie?api_key=${apiKey}&primary_release_year=${year}&sort_by=vote_count.desc&page=${page}`
+            );
+
+            const data = await response.json();
+
+            allMovies = [...allMovies, ...data.results];
+        }
+
+        // Remove duplicates
+        const uniqueMovies = allMovies.filter(
+            (movie, index, self) =>
+                index === self.findIndex(m => m.id === movie.id)
+        );
+
+        // Sort using vote product
+        const sortedMovies = uniqueMovies
             .map(movie => ({
                 ...movie,
                 voteProduct: movie.vote_average * movie.vote_count
             }))
             .sort((a, b) => b.voteProduct - a.voteProduct)
-            .slice(0, 50); // Get top 10 movies
+            .slice(0, 50);
+
         return sortedMovies;
+
     } catch (error) {
-        console.error('Error fetching top movies of 2024:', error);
+        console.error('Error fetching top movies:', error);
         return [];
     }
 }
