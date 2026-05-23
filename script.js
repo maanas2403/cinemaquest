@@ -45,7 +45,7 @@ async function fetchTopMovies2024(year) {
                 voteProduct: movie.vote_average * movie.vote_count
             }))
             .sort((a, b) => b.voteProduct - a.voteProduct)
-            .slice(0, 25); // Get top 10 movies
+            .slice(0, 50); // Get top 10 movies
         return sortedMovies;
     } catch (error) {
         console.error('Error fetching top movies of 2024:', error);
